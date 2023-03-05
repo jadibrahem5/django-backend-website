@@ -1,0 +1,21 @@
+{% block content %}
+
+<div class="container">
+	<form method="POST" action="">
+		{% csrf_token %}
+		{{form}}
+		<input class="btn save" type="submit" name="save">
+	</form>
+</div>
+
+<script>
+    $(document).ready(function(){
+      var date_input=$('input[name="due"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        dateFormat: 'yy-mm-dd',
+      };
+      date_input.datepicker(options);
+    })
+</script>
+{% endblock %}

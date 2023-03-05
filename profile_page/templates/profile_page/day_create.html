@@ -1,0 +1,7 @@
+<div class="container">
+	<form method="POST" action="">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input class="btn save" type="submit" name="save">
+	</form>
+</div>
